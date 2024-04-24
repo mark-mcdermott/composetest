@@ -1,0 +1,23 @@
+version: 2
+jobs:
+    build:
+        docker:
+            - image: circleci/buildpack-deps:bionic-curl
+        steps:
+            - checkout
+            - setup_remote_docker
+            - run:
+                name: List Backend ls -la
+                command: docker-compose run backend ls -la
+            - run:
+                name: Backend pwd
+                command: docker-compose run backend pwd
+            - run:
+                name: Build Containers
+                command: docker-compose build
+            - run:
+                name: List Backend ls -la
+                command: docker-compose run backend ls -la
+            - run:
+                name: Backend pwd
+                command: docker-compose run backend pwd
