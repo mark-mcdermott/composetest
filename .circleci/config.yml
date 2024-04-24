@@ -23,4 +23,4 @@ jobs:
                 command: docker-compose run web pwd
             - run:
                 name: Run Front/Back Ends
-                command: docker compose -d up
+                command: docker-compose up -d
