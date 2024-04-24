@@ -7,6 +7,8 @@ services:
       - "3000:3000"
     depends_on:
       - db
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@db:5432/backend
   
   # Service for the PostgreSQL database
   db:
