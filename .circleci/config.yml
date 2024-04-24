@@ -7,20 +7,20 @@ jobs:
             - checkout
             - setup_remote_docker
             - run:
-                name: List web ls -la
-                command: docker-compose run web ls -la
+                name: List backend ls -la
+                command: docker-compose run backend ls -la
             - run:
-                name: web pwd
-                command: docker-compose run web pwd
+                name: backend pwd
+                command: docker-compose run backend pwd
             - run:
                 name: Build Containers
                 command: docker-compose build
             - run:
-                name: List web ls -la
-                command: docker-compose run web ls -la
+                name: List backend ls -la
+                command: docker-compose run backend ls -la
             - run:
-                name: web pwd
-                command: docker-compose run web pwd
+                name: backend pwd
+                command: docker-compose run backend pwd
             - run:
                 name: Run Front/Back Ends
                 command: docker-compose up -d
