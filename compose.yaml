@@ -3,6 +3,8 @@ services:
     build: ./backend
     ports:
       - "3000:3000"
+    depends_on:
+      - db
   
   # Service for the PostgreSQL database
   db:
